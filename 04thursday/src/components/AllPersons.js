@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types';
 
 export default function AllPersons(props) {
-  const { persons,editPerson,deletePerson} = props;
+  const {persons,editPerson,deletePerson} = props;
   
   return (
     <div>
@@ -11,10 +11,9 @@ export default function AllPersons(props) {
           <tr><th>Age</th><th>Name</th><th>Gender</th><th>Email</th></tr>
         </thead>
         <tbody>
-          {persons.map(p => {
-            "<td>" + p.age + "</td><td>" + p.name + "</td><td>" + p.gender + "</td><td>" + p.email + "</td>";
-          })}
-          <td>{persons.age}</td><td>{persons.name}</td>
+          {persons.map(p => (
+            <tr><td>{something}</td><td>{p.name}</td><td>{p.gender}</td><td>{p.email}</td></tr>
+          ))}
         </tbody>
       </table>
       
