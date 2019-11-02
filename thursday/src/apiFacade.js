@@ -1,3 +1,5 @@
+import uuid from "uuid/v1";
+
 let URL = "http://localhost:3456/api";
 
 //The two methods below, are the utility-methods introduced here (use them if you like):
@@ -33,12 +35,17 @@ function apiFacade() {
   }
 
   function addEditPerson(person) {
-    //Complete me. A smart version will handle both Add and Edit, but focus on Add (POST) only first
+    console.log(person.id)
+    if (person.id !== "") {
+      return fetch(URL + "/" + person.id, makeOptions("PUT", person)).then(handleHttpErrors);
+    } else {
+      person.id = uuid();
+      return fetch(URL, makeOptions("POST", person)).then(handleHttpErrors);
+    }
   }
 
   function deletePerson(id) {
-    //Complete me
-    fetch(URL + "/" + id, makeOptions("DELETE")).then(handleHttpErrors);
+    return fetch(URL + "/" + id, makeOptions("DELETE")).then(handleHttpErrors);
   }
 
   return {

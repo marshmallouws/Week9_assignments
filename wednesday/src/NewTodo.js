@@ -26,7 +26,7 @@ function NewTodo(props) {
       <h4>{title}</h4>
       <form>
         <input value={todo.todoText} onChange={onChange} />
-        <br/><br/>
+        <br /><br />
         <button onClick={saveTodo} className="btn btn-info">Save</button>
       </form>
       {todo.id !== "" && <p>Editing todo with</p>}

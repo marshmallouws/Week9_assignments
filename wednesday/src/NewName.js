@@ -18,7 +18,7 @@ function NewName(props) {
   const onChange = evt => {
     const val = evt.target.value;
     newName.name = val;
-    setNewName({ ...newName});
+    setNewName({ ...newName });
   };
   const title = newName.id === "" ? "Create new Todo" : "Edit Todo"
   return (
@@ -26,7 +26,7 @@ function NewName(props) {
       <h4>{title}</h4>
       <form>
         <input value={newName.name} onChange={onChange} />
-        <br/><br/>
+        <br /><br />
         <button onClick={saveName} className="btn btn-info">Save</button>
       </form>
       {newName.id !== "" && <p>Editing todo with</p>}
